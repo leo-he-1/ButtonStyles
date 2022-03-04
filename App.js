@@ -32,10 +32,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
-
 const toggleLoading = () => {
     this.showLoader
   };
@@ -43,66 +39,71 @@ const App = () => (
 
   <View style={styles.rowContainer}>
 
-    <View style={styles.Button1}>
-    <Button
-        title="Default"
-        onPress={() => Alert.alert('Default Text Button has been pressed.')}
-    />
-    <Separator />
-    <Button
-        title="Icon"
-        onPress={() => Alert.alert('Icon Text Button has been pressed.')}
-    />
-    <Separator />
-    <Button
-        title="Loading"
-        onPress={() => Alert.alert('Loading Text Button has been pressed.')}
-    />
-    </View>
+        <View style={styles.ButtonContainer1}>
+            <View style={styles.Button1}>
+                <Button
+                    title="Default"
+                    color="blue"
+                    onPress={() => Alert.alert('Default Text Button has been pressed.')}
+                />
+            </View>
+            <View style={styles.Button1}>
+                <Button
+                    title="Icon"
+                    onPress={() => Alert.alert('Icon Text Button has been pressed.')}
+                />
+            </View>
+            <View style={styles.Button1}>
+                <Button
+                    title="Loading"
+                    onPress={() => Alert.alert('Loading Text Button has been pressed.')}
+                />
+            </View>
+        </View>
 
 
 
-    <View style={styles.Button2}>
-    <Button
-        title="Default"
-        onPress={() => Alert.alert('Default Text Button has been pressed.')}
-    />
+        <View style={styles.ButtonContainer2}>
+            <View style={styles.Button2}>
+                <Button
+                    title="Default"
+                    onPress={() => Alert.alert('Default Text Button has been pressed.')}
+                />
+            </View>
+            <View style={styles.Button2}>
+                <Button
+                    title="Icon"
+                    onPress={() => Alert.alert('Icon Text Button has been pressed.')}
+                />
+            </View>
+            <View style={styles.Button2}>
+                <Button
+                    title="Loading"
+                    onPress={() => Alert.alert('Loading Text Button has been pressed.')}
+                />
+            </View>
+       </View>
 
-    <Separator />
-
-    <Button
-        title="Icon"
-        onPress={() => Alert.alert('Icon Text Button has been pressed.')}
-    />
-    <Separator />
-    <TouchableOpacity onPress={toggleLoading}>
-    <Button
-       title="Loading"
-       onPress={() => Alert.alert('Loading Text Button has been pressed.')}
-   />
-   </TouchableOpacity>
-   </View>
-
-   <View style={styles.Button3}>
-   <Button
-       title="Default"
-       onPress={() => Alert.alert('Default Text Button has been pressed.')}
-   />
-
-   <Separator />
-
-   <Button
-       title="Icon"
-       onPress={() => Alert.alert('Icon Text Button has been pressed.')}
-   />
-   <Separator />
-   <TouchableOpacity onPress={toggleLoading}>
-   <Button
-      title="Loading"
-      onPress={() => Alert.alert('Loading Text Button has been pressed.')}
-  />
-  </TouchableOpacity>
-  </View>
+       <View style={styles.ButtonContainer3}>
+           <View style={styles.Button3}>
+               <Button
+                   title="Default"
+                   onPress={() => Alert.alert('Default Text Button has been pressed.')}
+               />
+           </View>
+           <View style={styles.Button3}>
+               <Button
+                   title="Icon"
+                   onPress={() => Alert.alert('Icon Text Button has been pressed.')}
+               />
+           </View>
+           <View style={styles.Button3}>
+               <Button
+                   title="Loading"
+                   onPress={() => Alert.alert('Loading Text Button has been pressed.')}
+               />
+           </View>
+      </View>
   </View>
 
 
@@ -113,26 +114,38 @@ const styles = StyleSheet.create({
     rowContainer:{
         flexDirection: 'row'
         },
-        Button1: {
+        ButtonContainer1: {
             alignItems: 'baseline',
             marginHorizontal: 27,
             marginVertical: 10,
         },
 
-        Button2: {
-            justifyContent:'center',
+        ButtonContainer2: {
             alignItems: 'center',
             marginHorizontal: 27,
-            marginVertical: 10
+            marginVertical: 10,
         },
-        Button3: {
+        ButtonContainer3: {
             alignItems: 'flex-end',
             marginHorizontal: 27,
             marginVertical: 10
         },
-        separator: {
-        marginVertical: 8,
-      },
+        Button1: {
+            marginVertical: 10,
+            color: 'blue'
+        },
+        Button2: {
+            marginVertical: 10,
+            borderWidth: 1,
+            borderColor: 'blue',
+        },
+        Button3: {
+            marginVertical: 10,
+        },
+        text: {
+        fontSize: 16,
+        color:'blue',
+        }
 
 
 });
