@@ -19,6 +19,8 @@ import {
   Button,
   Alert,
   Icon,
+  TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 
 import {
@@ -33,10 +35,15 @@ import {
 const Separator = () => (
   <View style={styles.separator} />
 );
+
+const toggleLoading = () => {
+    this.showLoader
+  };
 const App = () => (
 
-  <View style={styles.Button1}>
+  <View style={styles.rowContainer}>
 
+    <View style={styles.Button1}>
     <Button
         title="Default"
         onPress={() => Alert.alert('Default Text Button has been pressed.')}
@@ -44,36 +51,83 @@ const App = () => (
     <Separator />
     <Button
         title="Icon"
-        onPress={() => Alert.alert('Default Text Button has been pressed.')}
+        onPress={() => Alert.alert('Icon Text Button has been pressed.')}
     />
     <Separator />
     <Button
         title="Loading"
+        onPress={() => Alert.alert('Loading Text Button has been pressed.')}
+    />
+    </View>
+
+
+
+    <View style={styles.Button2}>
+    <Button
+        title="Default"
         onPress={() => Alert.alert('Default Text Button has been pressed.')}
     />
 
+    <Separator />
 
+    <Button
+        title="Icon"
+        onPress={() => Alert.alert('Icon Text Button has been pressed.')}
+    />
+    <Separator />
+    <TouchableOpacity onPress={toggleLoading}>
+    <Button
+       title="Loading"
+       onPress={() => Alert.alert('Loading Text Button has been pressed.')}
+   />
+   </TouchableOpacity>
+   </View>
+
+   <View style={styles.Button3}>
+   <Button
+       title="Default"
+       onPress={() => Alert.alert('Default Text Button has been pressed.')}
+   />
+
+   <Separator />
+
+   <Button
+       title="Icon"
+       onPress={() => Alert.alert('Icon Text Button has been pressed.')}
+   />
+   <Separator />
+   <TouchableOpacity onPress={toggleLoading}>
+   <Button
+      title="Loading"
+      onPress={() => Alert.alert('Loading Text Button has been pressed.')}
+  />
+  </TouchableOpacity>
   </View>
+  </View>
+
+
+
 
 );
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        padding: 50
+    rowContainer:{
+        flexDirection: 'row'
         },
         Button1: {
-            marginRight: 300,
-            marginHorizontal: 10,
+            alignItems: 'baseline',
+            marginHorizontal: 27,
             marginVertical: 10,
         },
+
         Button2: {
-            marginRight: 300,
-            marginHorizontal: 10,
+            justifyContent:'center',
+            alignItems: 'center',
+            marginHorizontal: 27,
             marginVertical: 10
         },
         Button3: {
-            marginRight: 300,
-            marginHorizontal: 10,
+            alignItems: 'flex-end',
+            marginHorizontal: 27,
             marginVertical: 10
         },
         separator: {
